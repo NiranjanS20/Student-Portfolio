@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-deep-slate: #0F172A;
+  --color-charcoal-blue: #1E293B;
+  --color-dusty-cyan: #7C9BAA;
+  --color-muted-lavender: #8B84A8;
+  --color-soft-white: #E5E7EB;
+  --color-cool-gray: #94A3B8;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-script: "Great Vibes", cursive;
+}
+
+body {
+  @apply bg-deep-slate text-soft-white font-sans antialiased;
+  /* Cinematic grain overlay from target design */
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+::selection {
+  @apply bg-dusty-cyan/30 text-soft-white;
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-deep-slate;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-charcoal-blue rounded-full border border-deep-slate/50;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-dusty-cyan/50;
+}
+
+/* Smooth scrolling class for html */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Utilities for glassmorphism */
+.glass-panel {
+  @apply bg-charcoal-blue/40 backdrop-blur-sm border border-soft-white/5 rounded-2xl;
+}
