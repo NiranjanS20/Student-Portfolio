@@ -60,6 +60,7 @@ export const PROJECTS: Project[] = [
     techStack: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'Scikit-learn', 'Gemini API'],
     githubUrl: 'https://github.com/NiranjanS20/DelphiMinds-AI',
     liveUrl: 'https://delphi-minds-ai.vercel.app/',
+    images: ['/images/delphiminds.png'],
     featured: true
   },
   {
@@ -74,6 +75,7 @@ export const PROJECTS: Project[] = [
     techStack: ['React', 'Tailwind CSS', 'Leaflet', 'Flask', 'FastAPI'],
     githubUrl: 'https://github.com/NiranjanS20/TaskBridge',
     liveUrl: 'https://task-bridge-dzfa.vercel.app/',
+    images: ['/images/taskbridge.png'],
     featured: true
   },
   {
@@ -88,6 +90,7 @@ export const PROJECTS: Project[] = [
     techStack: ['React', 'Flask', 'PostgreSQL', 'Scikit-learn', 'Firebase'],
     githubUrl: 'https://github.com/NiranjanS20/Annapurna-AI',
     liveUrl: 'https://annapurna-ai-nine.vercel.app/',
+    images: ['/images/annapurna1.png', '/images/annapurna2.png'],
     featured: true
   }
 ];
