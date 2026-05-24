@@ -36,33 +36,46 @@ function ProjectCard({ project, index }: { project: any, index: number, key?: st
       transition={{ duration: 0.8 }}
       className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center group`}
     >
-      {/* Visual Placeholder (Simulating a premium interface screenshot) */}
+      {/* Visual Component */}
       <div className="w-full lg:w-1/2 aspect-[4/3] rounded-2xl overflow-hidden glass-panel relative p-2 border border-soft-white/10 group-hover:border-dusty-cyan/30 transition-colors">
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal-blue/80 to-deep-slate/90 z-10 group-hover:opacity-80 transition-opacity"></div>
         
-        {/* Abstract UI representation */}
-        <div className="w-full h-full rounded-xl bg-deep-slate relative z-0 overflow-hidden border border-soft-white/5 flex flex-col pt-4 px-4 gap-4">
-           {/* Mock Header */}
-           <div className="w-full flex gap-2 items-center opacity-30">
-             <div className="w-2 h-2 rounded-full bg-red-400"></div>
-             <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-             <div className="w-2 h-2 rounded-full bg-green-400"></div>
-           </div>
-           {/* Mock Content */}
-           <div className="w-1/3 h-4 bg-soft-white/10 rounded-sm"></div>
-           <div className="w-full flex gap-4 h-full pb-4">
-              <div className="w-1/4 h-full bg-soft-white/5 rounded-lg"></div>
-              <div className="flex-1 h-full flex flex-col gap-4">
-                 <div className="w-full h-1/3 bg-dusty-cyan/10 rounded-lg border border-dusty-cyan/20 grid place-items-center opacity-50">
-                    <span className="font-mono text-dusty-cyan/50 text-xs">MODULE://{project.id.toUpperCase()}</span>
-                 </div>
-                 <div className="w-full flex-1 bg-soft-white/5 rounded-lg flex p-4 gap-4">
-                    <div className="w-1/2 h-full bg-soft-white/5 rounded"></div>
-                    <div className="w-1/2 h-full bg-soft-white/5 rounded"></div>
-                 </div>
+        {project.images && project.images.length > 0 ? (
+          <div className="w-full h-full rounded-xl relative z-0 overflow-hidden border border-soft-white/5 bg-charcoal-blue flex items-center justify-center">
+            {project.images.length > 1 ? (
+              <div className="w-full h-full flex flex-col gap-2 p-2">
+                {project.images.map((img: string, i: number) => (
+                  <img key={i} src={img} alt={`${project.title} screenshot ${i + 1}`} className="w-full h-1/2 object-cover rounded-lg" />
+                ))}
               </div>
-           </div>
-        </div>
+            ) : (
+              <img src={project.images[0]} alt={`${project.title} screenshot`} className="w-full h-full object-cover" />
+            )}
+          </div>
+        ) : (
+          <div className="w-full h-full rounded-xl bg-deep-slate relative z-0 overflow-hidden border border-soft-white/5 flex flex-col pt-4 px-4 gap-4">
+             {/* Mock Header */}
+             <div className="w-full flex gap-2 items-center opacity-30">
+               <div className="w-2 h-2 rounded-full bg-red-400"></div>
+               <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+               <div className="w-2 h-2 rounded-full bg-green-400"></div>
+             </div>
+             {/* Mock Content */}
+             <div className="w-1/3 h-4 bg-soft-white/10 rounded-sm"></div>
+             <div className="w-full flex gap-4 h-full pb-4">
+                <div className="w-1/4 h-full bg-soft-white/5 rounded-lg"></div>
+                <div className="flex-1 h-full flex flex-col gap-4">
+                   <div className="w-full h-1/3 bg-dusty-cyan/10 rounded-lg border border-dusty-cyan/20 grid place-items-center opacity-50">
+                      <span className="font-mono text-dusty-cyan/50 text-xs">MODULE://{project.id.toUpperCase()}</span>
+                   </div>
+                   <div className="w-full flex-1 bg-soft-white/5 rounded-lg flex p-4 gap-4">
+                      <div className="w-1/2 h-full bg-soft-white/5 rounded"></div>
+                      <div className="w-1/2 h-full bg-soft-white/5 rounded"></div>
+                   </div>
+                </div>
+             </div>
+          </div>
+        )}
 
         {/* Floating overlay link text */}
         <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
