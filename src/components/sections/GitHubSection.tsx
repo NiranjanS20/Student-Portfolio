@@ -55,7 +55,7 @@ export function GitHubSection() {
           {/* GitHub Readme Stats Image - Cinematic Dark Theme */}
           <div className="rounded-xl overflow-hidden glass-panel">
             <img
-              src={`https://github-readme-stats.vercel.app/api?username=NiranjanS20&show_icons=true&theme=dark&hide_border=true&bg_color=1E293B&title_color=7c9baa&text_color=94a3b8&icon_color=8b84a8`}
+              src={`https://streak-stats.demolab.com/?user=niranjans20&theme=radical&background=0D1117&ring=FFD54F&fire=FF9800&currStreakLabel=FFD54F&border=FFD54F&stroke=FFD54F&border_radius=10`}
               alt="GitHub Stats"
               className="w-full object-cover filter brightness-90 saturate-50 hover:saturate-100 hover:brightness-100 transition-all duration-500"
               loading="lazy"
