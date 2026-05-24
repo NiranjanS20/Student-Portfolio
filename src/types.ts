@@ -6,6 +6,7 @@ export interface Project {
   techStack: string[];
   githubUrl?: string;
   liveUrl?: string;
+  images?: string[];
   featured: boolean;
 }
 
